@@ -1,28 +1,39 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div id="app" v-bind:class="getThemeClass()">
+        <Header></Header>
+        <router-view/>
+        <TurnBlack></TurnBlack>
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+    import Header from "./components/Header.vue"
+    import TurnBlack from "./components/TurnBlack.vue"
+    import ThemeMixin from './mixins/ThemeMixin'
 
-export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
-}
+    export default {
+        components : {Header, TurnBlack},
+
+        mixins : [ThemeMixin]
+    }
 </script>
 
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+    @import url('https://fonts.googleapis.com/css?family=Exo:300,400,500,600');
+
+    html, body {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+    }
+
+    #app {
+        height: 100%;
+
+        &.is--dark {
+            background : rgb(31, 31, 31);
+        }
+    }
+
+
 </style>
