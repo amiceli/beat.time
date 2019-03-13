@@ -57,6 +57,13 @@
             span:not(.is--white), span:not(.is--blue) {
                 color : white;
             }
+
+            span.is--blue {
+                background-color : rgba(77, 145, 224, 1) !important;
+            }
+            span.is--white+span {
+                color : rgba(77, 145, 224, 1) !important;
+            }
         }
 
         b {
