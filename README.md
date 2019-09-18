@@ -1,5 +1,7 @@
 # beat.time
 
+Demo : [https://beat-time.netlify.com](https://beat-time.netlify.com)
+
 ## Project setup
 ```
 npm install
